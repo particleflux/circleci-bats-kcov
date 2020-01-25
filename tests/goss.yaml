@@ -1,0 +1,48 @@
+package:
+  bats:
+    installed: true
+    versions:
+    - 0.4.0-1.1
+  ca-certificates:
+    installed: true
+    versions:
+    - "20190110"
+  curl:
+    installed: true
+    versions:
+    - 7.64.0-4
+  git:
+    installed: true
+    versions:
+    - 1:2.20.1-2+deb10u1
+  jq:
+    installed: true
+    versions:
+    - 1.5+dfsg-2+b1
+  openssh-client:
+    installed: true
+    versions:
+    - 1:7.9p1-10+deb10u1
+  sudo:
+    installed: true
+    versions:
+    - 1.8.27-1+deb10u1
+command:
+  bats --version:
+    exit-status: 0
+    stdout:
+    - Bats 0.4.0
+    stderr: []
+    timeout: 10000
+  sudo whoami:
+    exit-status: 0
+    stdout:
+    - root
+    stderr: []
+    timeout: 10000
+  whoami:
+    exit-status: 0
+    stdout:
+    - circleci
+    stderr: []
+    timeout: 10000
