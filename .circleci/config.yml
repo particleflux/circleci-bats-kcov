@@ -1,0 +1,52 @@
+##
+# Circle CI 2.0 configuration
+#
+# Requirements on CI:
+#
+# * AWS credentials with rw permissions on ECR
+# * CIRCLE_TOKEN environment variable with a valid Circle CI API token with read
+#   access to the docker-for-gastfreund project
+#
+##
+version: 2.0
+jobs:
+  run-tests:
+    docker:
+      - image: particleflux/circleci-docker-dgoss
+    environment:
+      # fixes a permission issue on Circle 2.0
+      # see https://github.com/aelsabbahy/goss/issues/305#issuecomment-353122840
+      GOSS_FILES_STRATEGY: cp
+
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Run image tests
+          command: |
+            mkdir build
+
+            echo "Building docker image..."
+            docker build -t "test-image" . | tee "build/docker-build.log"
+
+            cd tests
+            dgoss run -Pit test-image bash
+
+      - store_artifacts:
+          path: build
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - run-tests
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - run-tests
