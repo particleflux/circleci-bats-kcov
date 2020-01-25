@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## 1.1.0 - 2020-01-25
 ### Added
 - Add sudo
 ### Changed
@@ -14,4 +16,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/particleflux/circleci-bats-kcov/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/particleflux/circleci-bats-kcov/compare/1.1.0...HEAD
