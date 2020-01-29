@@ -1,12 +1,6 @@
 ##
 # Circle CI 2.0 configuration
 #
-# Requirements on CI:
-#
-# * AWS credentials with rw permissions on ECR
-# * CIRCLE_TOKEN environment variable with a valid Circle CI API token with read
-#   access to the docker-for-gastfreund project
-#
 ##
 version: 2.0
 jobs:
