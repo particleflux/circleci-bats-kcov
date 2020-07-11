@@ -6,7 +6,7 @@ version: 2.0
 jobs:
   run-tests:
     docker:
-      - image: particleflux/circleci-docker-dgoss:1.0.0
+      - image: particleflux/circleci-docker-dgoss:1.0.1
     environment:
       # fixes a permission issue on Circle 2.0
       # see https://github.com/aelsabbahy/goss/issues/305#issuecomment-353122840
