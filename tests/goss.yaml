@@ -1,6 +1,4 @@
 package:
-  bats:
-    installed: true
   ca-certificates:
     installed: true
   curl:
@@ -17,7 +15,7 @@ command:
   bats --version:
     exit-status: 0
     stdout:
-    - Bats 0.4.0
+    - Bats 1.2.1
     stderr: []
     timeout: 10000
   sudo whoami:
