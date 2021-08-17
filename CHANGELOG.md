@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## [3.0.0] - 2021-08-17
+### Changed
+- Upgraded to debian bullseye as base image
 
 ## [2.0.0] - 2020-10-26
 ### Changed
@@ -21,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/particleflux/circleci-bats-kcov/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/particleflux/circleci-bats-kcov/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/particleflux/circleci-bats-kcov/compare/2.0.0...3.0.0
 [2.0.0]: https://github.com/particleflux/circleci-bats-kcov/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/particleflux/circleci-bats-kcov/compare/1.0.0...1.1.0
