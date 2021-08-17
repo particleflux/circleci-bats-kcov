@@ -43,7 +43,10 @@ FROM debian:bullseye-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+    # generic stuff for CI work
     'curl=7.*' 'git=1:2.*' 'jq=1.*' 'openssh-client=1:8.*' 'sudo=1.*' 'ca-certificates' \
+    # kcov runtime requirements
+    'binutils=2.*' 'libcurl4=7.*' 'libdw1=0.*' \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -ms /bin/bash circleci \
