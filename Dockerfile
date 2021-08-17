@@ -56,5 +56,6 @@ COPY --from=builder /usr/local/bin/kcov* /usr/local/bin/
 COPY --from=builder /usr/local/share/doc/kcov /usr/local/share/doc/kcov
 COPY --from=builder /usr/local/bin/bats* /usr/local/bin/
 COPY --from=builder /usr/local/libexec/bats-core /usr/local/libexec/bats-core
+COPY --from=builder /usr/local/lib/bats-core /usr/local/lib/bats-core
 
 USER circleci
