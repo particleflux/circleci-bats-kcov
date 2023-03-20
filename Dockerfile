@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim AS builder
 
-ENV KCOV_VERSION 38
-ENV BATS_VERSION 1.2.1
+ENV KCOV_VERSION 41
+ENV BATS_VERSION 1.9.0
 
 RUN apt-get update && \
     apt-get install -y \
@@ -20,7 +20,7 @@ RUN apt-get update && \
         ;
 
 # kcov
-RUN curl -sSL "https://github.com/SimonKagstrom/kcov/archive/refs/tags/${KCOV_VERSION}.tar.gz" \
+RUN curl -sSL "https://github.com/SimonKagstrom/kcov/archive/refs/tags/v${KCOV_VERSION}.tar.gz" \
     | tar -C '/tmp' -xzv \
     && cd "/tmp/kcov-${KCOV_VERSION}" \
     && mkdir build \

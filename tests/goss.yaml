@@ -15,7 +15,7 @@ command:
   bats --version:
     exit-status: 0
     stdout:
-    - Bats 1.2.1
+    - Bats 1.9.0
     stderr: []
     timeout: 10000
   sudo whoami:
