@@ -2,7 +2,11 @@
 # Circle CI 2.0 configuration
 #
 ##
-version: 2.0
+version: 2.1
+
+orbs:
+  docker: circleci/docker@2.2.0
+
 jobs:
   run-tests:
     docker:
@@ -33,7 +37,33 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - run-tests
+      - run-tests:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+
+      # on master, only publish version tagged with commit
+      - docker/publish:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - run-tests
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+
+      # on tags, publish tagged image & update latest
+      - docker/publish:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
+          requires:
+            - run-tests
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          tag: latest,$CIRCLE_TAG
+
   nightly:
     triggers:
       - schedule:
