@@ -18,6 +18,12 @@ command:
     - Bats 1.9.0
     stderr: []
     timeout: 10000
+  kcov --version:
+    exit-status: 0
+    stdout:
+      - kcov 41
+    stderr: [ ]
+    timeout: 10000
   sudo whoami:
     exit-status: 0
     stdout:
