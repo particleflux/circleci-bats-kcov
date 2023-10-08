@@ -1,7 +1,9 @@
 FROM debian:bullseye-slim AS builder
 
-ENV KCOV_VERSION 41
-ENV BATS_VERSION 1.9.0
+# renovate: datasource=github-releases depName=SimonKagstrom/kcov versioning=loose
+ENV KCOV_VERSION v41
+# renovate: datasource=github-releases depName=bats-core/bats-core versioning=semver
+ENV BATS_VERSION v1.9.0
 
 RUN apt-get update && \
     apt-get install -y \
@@ -20,9 +22,9 @@ RUN apt-get update && \
         ;
 
 # kcov
-RUN curl -sSL "https://github.com/SimonKagstrom/kcov/archive/refs/tags/v${KCOV_VERSION}.tar.gz" \
+RUN curl -sSL "https://github.com/SimonKagstrom/kcov/archive/refs/tags/${KCOV_VERSION}.tar.gz" \
     | tar -C '/tmp' -xzv \
-    && cd "/tmp/kcov-${KCOV_VERSION}" \
+    && cd "/tmp/kcov-$(echo "$KCOV_VERSION" | tr -d v)" \
     && mkdir build \
     && cd build \
     && cmake -G 'Ninja' .. \
@@ -30,9 +32,9 @@ RUN curl -sSL "https://github.com/SimonKagstrom/kcov/archive/refs/tags/v${KCOV_V
     && cmake --build . --target install
 
 # bats
-RUN curl -sSL "https://github.com/bats-core/bats-core/archive/v$BATS_VERSION.tar.gz" \
+RUN curl -sSL "https://github.com/bats-core/bats-core/archive/$BATS_VERSION.tar.gz" \
       | tar -C '/tmp' -xzv \
-    && cd "/tmp/bats-core-$BATS_VERSION" \
+    && cd "/tmp/bats-core-$(echo "$BATS_VERSION" | tr -d v)" \
     && ./install.sh /usr/local \
     && bats --version
 
