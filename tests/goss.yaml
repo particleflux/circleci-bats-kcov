@@ -21,7 +21,7 @@ command:
   kcov --version:
     exit-status: 0
     stdout:
-      - kcov 41
+      - kcov 42
     stderr: []
     timeout: 10000
   sudo whoami:
