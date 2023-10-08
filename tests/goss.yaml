@@ -15,24 +15,24 @@ command:
   bats --version:
     exit-status: 0
     stdout:
-    - Bats 1.9.0
+      - Bats 1.10.0
     stderr: []
     timeout: 10000
   kcov --version:
     exit-status: 0
     stdout:
       - kcov 41
-    stderr: [ ]
+    stderr: []
     timeout: 10000
   sudo whoami:
     exit-status: 0
     stdout:
-    - root
+      - root
     stderr: []
     timeout: 10000
   whoami:
     exit-status: 0
     stdout:
-    - circleci
+      - circleci
     stderr: []
     timeout: 10000
