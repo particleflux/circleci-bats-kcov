@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim AS builder
 
 # renovate: datasource=github-releases depName=SimonKagstrom/kcov versioning=loose
-ENV KCOV_VERSION v42
+ENV KCOV_VERSION v43
 # renovate: datasource=github-releases depName=bats-core/bats-core versioning=semver
 ENV BATS_VERSION v1.11.0
 
