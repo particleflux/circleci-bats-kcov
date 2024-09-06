@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Bump bats to v1.11.0
+- Bump kcov to v43
 
 ## [5.0.0] - 2023-10-08
 ### Changed
