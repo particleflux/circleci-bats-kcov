@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [6.0.0] - 2024-09-06
 ### Changed
 - Bump bats to v1.11.0
 - Bump kcov to v43
@@ -39,7 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/particleflux/circleci-bats-kcov/compare/5.0.0...HEAD
+[Unreleased]: https://github.com/particleflux/circleci-bats-kcov/compare/6.0.0...HEAD
+[6.0.0]: https://github.com/particleflux/circleci-bats-kcov/compare/5.0.0...6.0.0
 [5.0.0]: https://github.com/particleflux/circleci-bats-kcov/compare/4.0.0...5.0.0
 [4.0.0]: https://github.com/particleflux/circleci-bats-kcov/compare/3.0.0...4.0.0
 [3.0.0]: https://github.com/particleflux/circleci-bats-kcov/compare/2.0.0...3.0.0
