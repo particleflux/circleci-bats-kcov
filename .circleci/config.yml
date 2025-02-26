@@ -25,7 +25,7 @@ jobs:
             mkdir build
 
             echo "Building docker image..."
-            docker build -t "test-image" . | tee "build/docker-build.log"
+            docker build -t "test-image" --progress=plain . 2>&1 | tee "build/docker-build.log"
 
             cd tests
             # run twice to get nice output *and* junit for Circle
