@@ -28,8 +28,13 @@ jobs:
             docker build -t "test-image" . | tee "build/docker-build.log"
 
             cd tests
+            # run twice to get nice output *and* junit for Circle
+            GOSS_OPTS='--format junit' dgoss run -Pit test-image bash > ../build/junit.xml
+
             dgoss run -Pit test-image bash
 
+      - store_test_results:
+          path: build/junit.xml
       - store_artifacts:
           path: build
 
