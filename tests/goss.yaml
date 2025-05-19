@@ -15,7 +15,7 @@ command:
   bats --version:
     exit-status: 0
     stdout:
-      - Bats 1.11.1
+      - Bats 1.12.0
     stderr: []
     timeout: 10000
   kcov --version:
