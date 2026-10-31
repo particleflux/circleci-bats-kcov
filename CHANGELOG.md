@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Bump bats to v1.11.1
 - Bump bats to v1.12.0
 - Bump bats to v1.13.0
+- Bump bats to v1.14.0
 
 ## [6.0.0] - 2024-09-06
 ### Changed
