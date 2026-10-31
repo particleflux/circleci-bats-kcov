@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- Bump bats to v1.11.1
-- Bump bats to v1.12.0
-- Bump bats to v1.13.0
 - Bump bats to v1.14.0
+- Upgrade debian to trixie
+  - curl 7 -> 8
+  - libdw -> elfutils (always has been the same, just packaging)
+  - openssh client 8 -> 10
 
 ## [6.0.0] - 2024-09-06
 ### Changed
