@@ -1,4 +1,4 @@
-FROM debian:trixie-20261027-slim AS builder
+FROM debian:trixie-20261104-slim AS builder
 
 # renovate: datasource=github-releases depName=SimonKagstrom/kcov versioning=loose
 ENV KCOV_VERSION=v43
@@ -41,7 +41,7 @@ RUN curl -sSL "https://github.com/bats-core/bats-core/archive/$BATS_VERSION.tar.
 
 
 
-FROM debian:trixie-20261027-slim
+FROM debian:trixie-20261104-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
